@@ -10,26 +10,13 @@ import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import * as Notifications from 'expo-notifications';
 
 export default function Home(){
-   const [visible, setVisible] = useState('');
-   const {user} = useContext(AuthContext);
+   const {user, bellOn, bellOff, visible} = useContext(AuthContext);
    const navigation = useNavigation();
 
 
    useEffect (() => {
-      async function checkStatusBell(){
-         const status = await AsyncStorage.getItem('@statusbell');
-
-         if(status){
-         setVisible(JSON.parse(status));
-         
-         }
-
-      }
-      checkStatusBell();
-
       return () => {}
    }, [])
 
@@ -42,27 +29,11 @@ export default function Home(){
    ])
 
    async function handleOff(){
-      setVisible('')
-      console.log('desativado')
-      await Notifications.cancelAllScheduledNotificationsAsync();
+      bellOff();
    }
    async function handleOn(){
-      setVisible('ativado')
-      await AsyncStorage.setItem('@statusbell', JSON.stringify(visible));
-      console.log('ativado')
-      handleNotify();
+      bellOn();
    }
-   async function handleNotify(){
-      await Notifications.scheduleNotificationAsync({
-         content: {
-            title: 'Notificação calmind',
-            body: `Olá ${user.name}, volte aqui!`
-         },
-         trigger: {
-            seconds: 10, repeats: true 
-         }
-      })
-   };
 
    return(
       <View style={styles.container}>

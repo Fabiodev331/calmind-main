@@ -11,6 +11,7 @@ import { getStorage } from "firebase/storage";
 import { getApp, getApps } from "firebase/app";
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+import * as Notifications from 'expo-notifications';
 
 export const AuthContext = createContext({});
 
@@ -18,6 +19,7 @@ export default function AuthProvider({ children }){
    const [user, setUser] = useState(null);
    const [loadingAuth, setLoadingAuth] = useState(false);
    const [loading, setLoading] = useState(true);
+   const [visible, setVisible] = useState('');
 
    if (!getApps().length) {
       try {
@@ -50,6 +52,17 @@ export default function AuthProvider({ children }){
       }
       loadStorage();
    },[user])
+
+   useEffect (() => {
+      async function checkStatusBell(){
+         const status = await AsyncStorage.getItem('@statusbell');
+
+         if(status){
+         setVisible('ativado');  
+         }
+      }
+      checkStatusBell();
+   }, [])
  
    async function signUp(email, password, name){ 
       setLoadingAuth(true);
@@ -106,11 +119,12 @@ export default function AuthProvider({ children }){
       })
    }
    async function SignOut(){
-      await AsyncStorage.clear();
+      await AsyncStorage.removeItem('@calmind');
       await signOut(auth)
       .then(() => {
          setUser(null);
       })
+      bellOff();
    }
 
    async function storageUser(data){
@@ -134,8 +148,29 @@ export default function AuthProvider({ children }){
       }
       setUser(data);
       storageUser(data);
-      
    }
+
+   async function bellOff(){
+      setVisible('')
+      await Notifications.cancelAllScheduledNotificationsAsync();
+      await AsyncStorage.removeItem('@statusbell')
+   }
+   async function bellOn(){
+      setVisible('ativado')
+      await AsyncStorage.setItem('@statusbell', JSON.stringify(visible));
+      handleNotify();
+   }
+   async function handleNotify(){
+      await Notifications.scheduleNotificationAsync({
+         content: {
+            title: 'Notificação calmind',
+            body: `Olá ${user.name}, volte aqui!`
+         },
+         trigger: {
+            seconds: 10, repeats: true 
+         }
+      })
+   };
 
    return(
       <AuthContext.Provider 
@@ -148,7 +183,10 @@ export default function AuthProvider({ children }){
          loading, 
          user,
          handleFirebaseStorage,
-         updateUser
+         updateUser,
+         bellOn,
+         bellOff,
+         visible
       }}>
          {children}
       </AuthContext.Provider>
