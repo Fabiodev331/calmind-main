@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
-import Video01 from "../pages/Video01";
+import RespiraçãoCoerente from "../pages/RespiraçãoCoerente";
+import RespiraçãoQuadrada from "../pages/RespiraçãoQuadrada";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,13 +29,12 @@ export default function AppRoutes(){
             fontSize: 25
          },
          }}
-         
          />
          
          <Stack.Screen 
-         name="Video01" 
-         component={Video01} 
-         options={{title: 'Mente',
+         name="RespiraçãoCoerente" 
+         component={RespiraçãoCoerente} 
+         options={{title: 'Respiração Coerente',
          headerStyle: {
             backgroundColor: "#3B5368"
          },
@@ -43,7 +43,20 @@ export default function AppRoutes(){
             fontSize: 25
          },
          }}
-         
+         />
+
+         <Stack.Screen 
+         name="RespiraçãoQuadrada" 
+         component={RespiraçãoQuadrada} 
+         options={{title: 'Respiração Quadrada',
+         headerStyle: {
+            backgroundColor: "#3B5368"
+         },
+         headerTitleStyle: {
+            color: "#020E17",
+            fontSize: 25
+         },
+         }}
          />
       </Stack.Navigator>
    )

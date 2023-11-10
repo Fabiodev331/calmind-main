@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from "./styles";
 
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome from "@expo/vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -12,7 +12,10 @@ export default function ContainerList(){
 
    return(
       <ScrollView>
-      <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Video01')}>
+      <TouchableOpacity 
+      style={styles.btn} 
+      onPress={() => navigation.navigate('RespiraçãoCoerente')}
+      >
          <LinearGradient 
          style={styles.container}
          colors={["#3B5368", "#020E17"]}
@@ -20,9 +23,44 @@ export default function ContainerList(){
          end={{x: 0, y: 1.5}}
          >
             <Text style={styles.nome}>
-               Mente
+               Respiração coerente
             </Text>
-            <FontAwesome name="car" color="#020E17" size={55} />
+            <FontAwesome name="brain" color="#ddd" size={45} />
+            
+         </LinearGradient>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+      style={styles.btn}
+      >
+         <LinearGradient 
+         style={styles.container}
+         colors={["#3B5368", "#020E17"]}
+         start={{x: 0, y: 0}}
+         end={{x: 0, y: 1.5}}
+         >
+            <Text style={styles.nome}>
+               Respiração diafragmática
+            </Text>
+            <FontAwesome name="lungs" color="#ddd" size={45} />
+            
+         </LinearGradient>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+      style={styles.btn}
+      onPress={() => navigation.navigate('RespiraçãoQuadrada')}
+      >
+         <LinearGradient 
+         style={styles.container}
+         colors={["#3B5368", "#020E17"]}
+         start={{x: 0, y: 0}}
+         end={{x: 0, y: 1.5}}
+         >
+            <Text style={styles.nome}>
+               Respiração quadrada
+            </Text>
+            <FontAwesome name="heartbeat" color="#ddd" size={45} />
             
          </LinearGradient>
       </TouchableOpacity>
@@ -34,9 +72,9 @@ export default function ContainerList(){
          end={{x: 0, y: 1.5}}
          >
             <Text style={styles.nome}>
-               Relaxar
+               Respiração 4-7-8
             </Text>
-            <FontAwesome name="compress" color="#020E17" size={55} />
+            <FontAwesome name="stethoscope" color="#ddd" size={45} />
             
          </LinearGradient>
       </TouchableOpacity>
@@ -48,40 +86,13 @@ export default function ContainerList(){
          end={{x: 0, y: 1.5}}
          >
             <Text style={styles.nome}>
-               Descanso
+               Alongamento focado
             </Text>
-            <FontAwesome name="bed" color="#020E17" size={55} />
+            <FontAwesome name="child" color="#ddd" size={45} />
             
          </LinearGradient>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
-         <LinearGradient 
-         style={styles.container}
-         colors={["#3B5368", "#020E17"]}
-         start={{x: 0, y: 0}}
-         end={{x: 0, y: 1.5}}
-         >
-            <Text style={styles.nome}>
-               Foco
-            </Text>
-            <FontAwesome name="rocket" color="#020E17" size={55} />
-            
-         </LinearGradient>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
-         <LinearGradient 
-         style={styles.container}
-         colors={["#3B5368", "#020E17"]}
-         start={{x: 0, y: 0}}
-         end={{x: 0, y: 1.5}}
-         >
-            <Text style={styles.nome}>
-               Corpo
-            </Text>
-            <FontAwesome name="male" color="#020E17" size={55} />
-            
-         </LinearGradient>
-      </TouchableOpacity>
+      
       </ScrollView>
    )
 } 

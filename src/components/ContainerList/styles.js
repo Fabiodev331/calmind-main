@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
       alignItems: 'flex-end'
    },
    btn: {
-      height: 100,
+      height: 105,
    },
    nome: {
       color: "#ddd",

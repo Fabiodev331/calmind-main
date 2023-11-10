@@ -7,38 +7,37 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       backgroundColor: "#020E17",
    },
-   text: {
-      color: "#3B5368",
-      fontSize: 30,
-      fontWeight: "bold",
-      letterSpacing: 0.5,
-      fontStyle: 'italic',
+   imageButton: {
+      backgroundColor: '#fff',
+      width: 165,
+      height: 165,
+      borderRadius: 90,
       marginBottom: 30,
-      fontFamily: 'sans-serif'
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 8
    },
-   input: {
-      width: "80%",
-      height: 50,
-      fontSize: 18,
-      borderWidth: 1,
-      borderColor: "#3B5368",
-      borderRadius: 5,
-      padding: 10,
+   imageText: {
+      fontSize: 45,
+      position: 'absolute',
       color: "#3B5368",
-      marginBottom: 20
+      opacity: 0.5,
+      zIndex: 99
    },
-   inputEmail: {
-      width: "80%",
-      height: 50,
-      fontSize: 18,
-      borderWidth: 1,
-      borderColor: "#3B5368",
-      backgroundColor: "#ddd",
-      borderRadius: 5,
-      padding: 10,
-      color: "#020E17",
-      marginBottom: 20,
-      opacity: 0.8
+   image: {
+      width: 163,
+      height: 163,
+      borderRadius: 90
+   },
+   TextName: {
+      color: "#ddd",
+      fontSize: 35,
+      marginBottom: 15
+   },
+   TextEmail: {
+      color: "#ddd",
+      fontSize: 16,
+      marginBottom: 20
    },
    button: {
       width: '80%',
@@ -48,23 +47,63 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 5,
-      marginBottom: 25
+      marginBottom: 25,
+   },
+   buttonText: {
+      color: "#ddd",
+      fontSize: 20,
+      fontWeight: 'bold'
    },
    buttonOut: {
-      width: '25%',
+      width: '80%',
       height: 50,
       backgroundColor: "#ddd",
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 5,
-      opacity: 0.8
    },
-   buttonText: {
-      color: "#020E17",
+   buttonTextOut: {
+      color: "#000",
       fontSize: 20,
       fontWeight: 'bold'
-
-   }
+   },
+   modalContainer: {
+      width: "100%",
+      height: "50%",
+      backgroundColor: "#3B5368",
+      position: "absolute",
+      bottom: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderTopLeftRadius: 10,
+      borderTopRightRadius: 10
+   },
+   buttonBack: {
+      position: 'absolute',
+      top: 15,
+      right: 25
+   },
+   input: {
+      width: '80%',
+      height: 50,
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: "#020E17",
+      marginBottom: 15,
+      fontSize: 20,
+      textAlign: 'center',
+      color: '#fff'
+   },
+   buttonUpdate: {
+      width: '80%',
+      height: 50,
+      backgroundColor: "#020E17",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 5,
+      marginBottom: 15,
+   },
 
 })

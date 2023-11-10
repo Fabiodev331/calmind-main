@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
       marginLeft: 15,
       marginRight: 15,
       marginTop: 15,
-      marginBottom: 25
+      marginBottom: 20
    },
    text: {
       fontSize: 22,
@@ -29,19 +29,11 @@ export const styles = StyleSheet.create({
       alignItems: 'center'
    },
    buttonProfile: {
-      width: 75,
-      height: 40,
-      backgroundColor: "#3B5368",
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: 5,
-      marginLeft: 15
-   },
-   buttonText: {
-      color: "#ddd",
-      fontSize: 20,
-      fontWeight: 'bold'
+      marginLeft: 15,
+      marginRight: 15,
    },
    containerIcon: {
       display: 'flex',

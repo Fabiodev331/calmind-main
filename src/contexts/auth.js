@@ -7,9 +7,9 @@ import { firebaseConfig } from "../services/firebaseConnection";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { collection, getDocs, setDoc, updateDoc, doc } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { getApp, getApps } from "firebase/app";
-import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import { initializeAuth, getReactNativePersistence, sendPasswordResetEmail } from 'firebase/auth';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import * as Notifications from 'expo-notifications';
 
@@ -136,13 +136,14 @@ export default function AuthProvider({ children }){
       console.log(storage)
    }
 
-   async function updateUser(name){
+   async function updateUser(name, email){
       const docRef = doc(db, "users", user?.uid);
       await updateDoc(docRef, {
-         name: name
+         name: name,
+         email: email
       })
       let data = {
-         email: user.email,
+         email: email,
          name: name,
          uid: user.uid,
       }
@@ -167,11 +168,50 @@ export default function AuthProvider({ children }){
             body: `Olá ${user.name}, volte aqui!`
          },
          trigger: {
-            seconds: 10, repeats: true 
+            seconds: 14400, repeats: true 
          }
       })
    };
 
+   function handlePassWord(){
+      sendPasswordResetEmail(auth, user?.email)
+      .then(()=> {
+         alert("Email enviado para: " + user?.email + " verifique seu email");
+      })
+      .catch((error)=> {
+         alert("Ops! Algo deu errado, tente novamente!")
+      })
+
+   }
+
+   async function uploadFileFirebase(uri){
+      //console.log(response);
+      //mandando para o storage do firebase
+      /*const blob = await new Promise((resolve, reject) => {
+         const xhr = new XMLHttpRequest();
+         xhr.onload = function () {
+           resolve(xhr.response);
+         };
+         xhr.onerror = function (e) {
+           console.log(e);
+           reject(new TypeError("Network request failed"));
+         };
+         xhr.responseType = "blob";
+         xhr.open("GET", uri, true);
+         xhr.send(null);
+       });
+       const uid = user.uid;
+     
+       const fileRef = ref(getStorage(), uid);
+       const result = await uploadBytes(fileRef, blob);
+     
+       // We're done with the blob, close and release it
+       blob.close();
+     
+       return await getDownloadURL(fileRef); */
+
+   }
+   
    return(
       <AuthContext.Provider 
       value={{ 
@@ -186,7 +226,9 @@ export default function AuthProvider({ children }){
          updateUser,
          bellOn,
          bellOff,
-         visible
+         visible,
+         handlePassWord,
+         uploadFileFirebase
       }}>
          {children}
       </AuthContext.Provider>
