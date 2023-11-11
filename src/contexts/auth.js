@@ -183,34 +183,6 @@ export default function AuthProvider({ children }){
       })
 
    }
-
-   async function uploadFileFirebase(uri){
-      //console.log(response);
-      //mandando para o storage do firebase
-      /*const blob = await new Promise((resolve, reject) => {
-         const xhr = new XMLHttpRequest();
-         xhr.onload = function () {
-           resolve(xhr.response);
-         };
-         xhr.onerror = function (e) {
-           console.log(e);
-           reject(new TypeError("Network request failed"));
-         };
-         xhr.responseType = "blob";
-         xhr.open("GET", uri, true);
-         xhr.send(null);
-       });
-       const uid = user.uid;
-     
-       const fileRef = ref(getStorage(), uid);
-       const result = await uploadBytes(fileRef, blob);
-     
-       // We're done with the blob, close and release it
-       blob.close();
-     
-       return await getDownloadURL(fileRef); */
-
-   }
    
    return(
       <AuthContext.Provider 
@@ -228,7 +200,6 @@ export default function AuthProvider({ children }){
          bellOff,
          visible,
          handlePassWord,
-         uploadFileFirebase
       }}>
          {children}
       </AuthContext.Provider>
