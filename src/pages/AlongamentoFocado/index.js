@@ -7,7 +7,7 @@ import { Video } from 'expo-av';
 
 import { AuthContext } from "../../contexts/auth";
 
-export default function RespiraçãoCoerente(){
+export default function AlongamentoFocado(){
    const {handleFirebaseStorage} = useContext(AuthContext);
    const video = React.useRef(null);
 
@@ -29,11 +29,13 @@ export default function RespiraçãoCoerente(){
 
             <Text style={styles.titleDescription}>Descrição:</Text>
             <Text style={styles.description}>
-            A respiração coerente, refere-se a um padrão de respiração específico que sincroniza a respiração com a atividade do coração, visando otimizar o funcionamento fisiológico e emocional.
-	         Esse tipo de respiração é caracterizado por uma frequência respiratória que induz um ritmo cardíaco equilibrado e coeso. Em termos práticos, significa respirar de maneira suave e rítmica, 
-            geralmente em um ciclo de inalação e exalação que dura de cinco a seis segundos cada.
-	         Ao adotar esse padrão respiratório, é possível estimular o sistema nervoso parassimpático, que está associado ao relaxamento e à diminuição do estresse. Isso resulta em benefícios para a saúde, 
-            incluindo redução da pressão arterial, melhoria da função cognitiva e redução dos níveis de hormônios do estresse. A técnica consiste em respirar por 6 segundo e soltar por 6 segundos.
+            A combinação de movimento, respiração e atenção plena pode aumentar a consciência corporal e mental, 
+            promovendo um estado de relaxamento e equilíbrio. Ao se concentrar na respiração durante o alongamento, 
+            você direciona a atenção para o presente, auxiliando na redução do estresse e na promoção do relaxamento. 
+            Isso não só melhora a eficácia do alongamento, mas também pode proporcionar benefícios mentais, 
+            como maior clareza mental e redução da ansiedade.
+	         Ao manter o foco no movimento e na respiração, você pode criar uma prática mais consciente 
+            e aumentar a conexão entre corpo e mente.
             </Text>
 
          </View>

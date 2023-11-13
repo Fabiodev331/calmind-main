@@ -16,6 +16,19 @@ export const styles = StyleSheet.create({
    btn: {
       height: 105,
    },
+   aviso: {
+      position: 'absolute',
+      top: 8,
+      left: 15,
+      backgroundColor: "#e00900",
+      color: '#ddd',
+      paddingBottom: 3,
+      paddingTop: 3,
+      paddingLeft: 4,
+      paddingRight: 4,
+      fontWeight: 'bold',
+      borderRadius: 5
+   },
    nome: {
       color: "#ddd",
       fontSize: 23,

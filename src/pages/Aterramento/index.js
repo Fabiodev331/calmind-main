@@ -7,7 +7,7 @@ import { Video } from 'expo-av';
 
 import { AuthContext } from "../../contexts/auth";
 
-export default function RespiraçãoCoerente(){
+export default function Aterramento(){
    const {handleFirebaseStorage} = useContext(AuthContext);
    const video = React.useRef(null);
 
@@ -29,11 +29,13 @@ export default function RespiraçãoCoerente(){
 
             <Text style={styles.titleDescription}>Descrição:</Text>
             <Text style={styles.description}>
-            A respiração coerente, refere-se a um padrão de respiração específico que sincroniza a respiração com a atividade do coração, visando otimizar o funcionamento fisiológico e emocional.
-	         Esse tipo de respiração é caracterizado por uma frequência respiratória que induz um ritmo cardíaco equilibrado e coeso. Em termos práticos, significa respirar de maneira suave e rítmica, 
-            geralmente em um ciclo de inalação e exalação que dura de cinco a seis segundos cada.
-	         Ao adotar esse padrão respiratório, é possível estimular o sistema nervoso parassimpático, que está associado ao relaxamento e à diminuição do estresse. Isso resulta em benefícios para a saúde, 
-            incluindo redução da pressão arterial, melhoria da função cognitiva e redução dos níveis de hormônios do estresse. A técnica consiste em respirar por 6 segundo e soltar por 6 segundos.
+            O termo "aterramento" ou "ancoragem" se refere a técnicas ou estratégias utilizadas 
+            para ajudar uma pessoa a se conectar com o momento presente, o ambiente ao seu redor 
+            ou com sensações físicas específicas.
+	         Além disso, o aterramento pode incluir práticas que envolvem os cinco sentidos, 
+            como observar objetos ao redor, tocar em algo com textura específica, descrever cores, 
+            aromas ou sabores presentes no ambiente. O objetivo é trazer a consciência de volta para 
+            o momento presente, ajudando a pessoa a se sentir mais segura, calma e conectada com a realidade imediata.
             </Text>
 
          </View>

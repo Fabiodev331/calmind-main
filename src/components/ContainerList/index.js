@@ -14,7 +14,7 @@ export default function ContainerList(){
       <ScrollView>
       <TouchableOpacity 
       style={styles.btn} 
-      onPress={() => navigation.navigate('RespiraçãoCoerente')}
+      onPress={() => navigation.navigate('Aterramento')}
       >
          <LinearGradient 
          style={styles.container}
@@ -22,8 +22,9 @@ export default function ContainerList(){
          start={{x: 0, y: 0}}
          end={{x: 0, y: 1.5}}
          >
+            <Text style={styles.aviso}>Comece aqui</Text>
             <Text style={styles.nome}>
-               Respiração coerente
+               Aterramento
             </Text>
             <FontAwesome name="brain" color="#ddd" size={45} />
             
@@ -32,6 +33,25 @@ export default function ContainerList(){
 
       <TouchableOpacity 
       style={styles.btn}
+      onPress={() => navigation.navigate('AlongamentoFocado')}
+      >
+         <LinearGradient 
+         style={styles.container}
+         colors={["#3B5368", "#020E17"]}
+         start={{x: 0, y: 0}}
+         end={{x: 0, y: 1.5}}
+         >
+            <Text style={styles.nome}>
+               Alongamento focado
+            </Text>
+            <FontAwesome name="child" color="#ddd" size={45} />
+            
+         </LinearGradient>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+      style={styles.btn}
+      onPress={() => navigation.navigate('RespiraçãoDiafragmática')}
       >
          <LinearGradient 
          style={styles.container}
@@ -64,7 +84,31 @@ export default function ContainerList(){
             
          </LinearGradient>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
+
+      <TouchableOpacity 
+      style={styles.btn} 
+      onPress={() => navigation.navigate('RespiraçãoCoerente')}
+      >
+         <LinearGradient 
+         style={styles.container}
+         colors={["#3B5368", "#020E17"]}
+         start={{x: 0, y: 0}}
+         end={{x: 0, y: 1.5}}
+         >
+            <Text style={styles.nome}>
+               Respiração coerente
+            </Text>
+            <FontAwesome name="wind" color="#ddd" size={45} />
+            
+         </LinearGradient>
+      </TouchableOpacity>
+
+
+
+      <TouchableOpacity 
+      style={styles.btn}
+      onPress={() => navigation.navigate('Respiração478')}
+      >
          <LinearGradient 
          style={styles.container}
          colors={["#3B5368", "#020E17"]}
@@ -75,20 +119,6 @@ export default function ContainerList(){
                Respiração 4-7-8
             </Text>
             <FontAwesome name="stethoscope" color="#ddd" size={45} />
-            
-         </LinearGradient>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
-         <LinearGradient 
-         style={styles.container}
-         colors={["#3B5368", "#020E17"]}
-         start={{x: 0, y: 0}}
-         end={{x: 0, y: 1.5}}
-         >
-            <Text style={styles.nome}>
-               Alongamento focado
-            </Text>
-            <FontAwesome name="child" color="#ddd" size={45} />
             
          </LinearGradient>
       </TouchableOpacity>
