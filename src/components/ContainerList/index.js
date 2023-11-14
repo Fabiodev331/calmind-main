@@ -33,24 +33,6 @@ export default function ContainerList(){
 
       <TouchableOpacity 
       style={styles.btn}
-      onPress={() => navigation.navigate('AlongamentoFocado')}
-      >
-         <LinearGradient 
-         style={styles.container}
-         colors={["#3B5368", "#020E17"]}
-         start={{x: 0, y: 0}}
-         end={{x: 0, y: 1.5}}
-         >
-            <Text style={styles.nome}>
-               Alongamento focado
-            </Text>
-            <FontAwesome name="child" color="#ddd" size={45} />
-            
-         </LinearGradient>
-      </TouchableOpacity>
-
-      <TouchableOpacity 
-      style={styles.btn}
       onPress={() => navigation.navigate('RespiraçãoDiafragmática')}
       >
          <LinearGradient 
