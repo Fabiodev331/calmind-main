@@ -20,7 +20,7 @@ export default function RespiraçãoDiafragmática(){
             ref={video}
             style={styles.video}
             source={{
-               uri: 'https://firebasestorage.googleapis.com/v0/b/calmind-b31b7.appspot.com/o/Paisagens%20em%20movimento.mp4?alt=media&token=1ba7331e-4f64-4ddd-aa0e-a44fd5059d69',
+               uri: 'https://firebasestorage.googleapis.com/v0/b/calmind-b31b7.appspot.com/o/Video%20Respira%C3%A7%C3%A3o%20diafragm%C3%A1tica.mp4?alt=media&token=fc1c945f-9e10-44f7-bf04-33094541687a',
             }}
             useNativeControls
             resizeMode="cover"

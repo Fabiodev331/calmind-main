@@ -18,7 +18,9 @@ export const styles = StyleSheet.create({
       marginBottom: 20,
       marginLeft: 20,
       marginRight: 20,
-      borderRadius: 5
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: '#ddd'
    },
    titleDescription: {
       textAlign: 'center',

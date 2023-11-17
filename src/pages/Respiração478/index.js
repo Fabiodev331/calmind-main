@@ -20,7 +20,7 @@ export default function Respiração478(){
             ref={video}
             style={styles.video}
             source={{
-               uri: 'https://firebasestorage.googleapis.com/v0/b/calmind-b31b7.appspot.com/o/Paisagens%20em%20movimento.mp4?alt=media&token=1ba7331e-4f64-4ddd-aa0e-a44fd5059d69',
+               uri: 'https://firebasestorage.googleapis.com/v0/b/calmind-b31b7.appspot.com/o/Video%20Respira%C3%A7%C3%A3o%204-7-8.mp4?alt=media&token=f1d68fbb-b022-49fb-a07f-005ae5449998',
             }}
             useNativeControls
             resizeMode="cover"
